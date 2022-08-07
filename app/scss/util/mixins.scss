@@ -24,8 +24,9 @@ $breakpoints-down: (
   }
 }
 
-/* How to include mixin
-@include breakpoint(large) {
-   font-size: 3rem;
+@mixin card {
+  border: solid var(--gray) 1px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  background: white;
 }
-*/
