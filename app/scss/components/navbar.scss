@@ -1,1 +1,26 @@
 @use "../util" as *;
+
+nav {
+  height: 500px;
+  background: url(../../../images/image-hero-desktop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-top: 50px;
+
+  .nav__container {
+    display: flex;
+    justify-content: space-between;
+
+    ul {
+      display: flex;
+      list-style: none;
+
+      li a {
+        color: white;
+        margin-left: 2rem;
+      }
+    }
+  }
+}
