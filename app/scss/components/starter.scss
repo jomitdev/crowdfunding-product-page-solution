@@ -65,4 +65,8 @@
   .bookmark:hover {
     opacity: 75%;
   }
+
+  .bookmarked {
+    color: var(--dark-cyan);
+  }
 }

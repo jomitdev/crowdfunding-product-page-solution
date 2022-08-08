@@ -1,2 +1,2 @@
-console.log("Hello");
+const bookmarkEl=document.querySelector(".bookmark");let bookmarked=!1;function bookmarkme(){alert("Press "+(-1!=navigator.userAgent.toLowerCase().indexOf("mac")?"Command/Cmd":"CTRL")+" + D to bookmark this page.")}bookmarkEl.addEventListener("click",(function(){!1===bookmarked?(bookmarked=!0,bookmarkEl.classList.add("bookmarked"),bookmarkEl.innerHTML='<img src="images/icon-bookmarked.svg" alt="" />\n   Bookmarked',bookmarkme()):(bookmarkEl.classList.remove("bookmarked"),bookmarkEl.innerHTML='<img src="images/icon-bookmark.svg" alt="" />\n   Bookmark',bookmarked=!1)}));
 //# sourceMappingURL=script.js.map
