@@ -68,6 +68,12 @@
         font-weight: var(--font-bold);
         font-size: 1rem;
         color: white;
+        cursor: pointer;
+        transition: background 100ms ease-in-out;
+      }
+
+      .button-smaller:hover {
+        background: var(--dark-cyan);
       }
     }
   }
