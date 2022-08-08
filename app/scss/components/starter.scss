@@ -2,4 +2,54 @@
 
 .starter {
   @include card;
+
+  .logo {
+    position: absolute;
+    top: -28px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  text-align: center;
+
+  h2 {
+    font-size: 2.25rem;
+    color: var(--black);
+  }
+
+  p {
+    margin-bottom: 40px;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .button {
+    height: 56px;
+    font-weight: var(--font-bold);
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+    color: white;
+  }
+
+  .bookmark {
+    height: 56px;
+    padding-left: 0;
+    padding-right: 25px;
+    text-align: center;
+    background-color: var(--gray);
+    display: flex;
+    align-items: center;
+    font-weight: var(--font-bold);
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+
+    img {
+      margin-right: 10px;
+    }
+  }
 }

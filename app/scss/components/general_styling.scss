@@ -1,0 +1,20 @@
+@use "../util" as *;
+
+h2 {
+  margin-bottom: 0;
+}
+
+p {
+  opacity: 50%;
+  font-weight: var(--font-regular);
+  font-size: 1.1rem;
+  letter-spacing: 0.05rem;
+  line-height: 1.9rem;
+}
+
+button {
+  border: none;
+  background-color: var(--moderate-cyan);
+  border-radius: 50px;
+  padding: 20px 30px;
+}
