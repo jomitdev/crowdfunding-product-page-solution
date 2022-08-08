@@ -2,4 +2,85 @@
 
 .about {
   @include card;
+
+  h3 {
+    font-size: 1.3rem;
+    font-weight: var(--font-bold);
+    margin-bottom: 40px;
+  }
+
+  p {
+    margin-bottom: 35px;
+    letter-spacing: 0.025rem;
+  }
+
+  .card {
+    @include card;
+
+    .headline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h3,
+      p {
+        margin-bottom: 25px;
+        padding: 0;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+        font-weight: var(--font-bold);
+      }
+
+      p {
+        color: var(--moderate-cyan);
+        opacity: 100%;
+      }
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .p-container {
+        display: flex;
+        align-items: center;
+
+        .numbers-left {
+          margin: 0;
+          margin-right: 7px;
+          font-size: 2rem;
+          color: var(--black);
+          opacity: 100%;
+          font-weight: var(--font-bold);
+        }
+
+        .smaller {
+          margin: 0;
+          font-size: 1rem;
+        }
+      }
+
+      .button-smaller {
+        padding-inline: 40px;
+        font-weight: var(--font-bold);
+        font-size: 1rem;
+        color: white;
+      }
+    }
+  }
+
+  .last {
+    opacity: 50%;
+
+    .button-gray {
+      background-color: var(--dark-gray);
+      padding-inline: 40px;
+      font-weight: var(--font-bold);
+      font-size: 1rem;
+      color: white;
+    }
+  }
 }
