@@ -149,22 +149,39 @@
           in the world?
         </p>
         <div class="card-no-reward card">
-          <div class="radio-container">
-            <input
-              type="radio"
-              name="pledge-options"
-              value="no-reward"
-              id="no-reward"
-            />
+          <div class="flex">
+            <div class="radio-container">
+              <input
+                type="radio"
+                name="pledge-options"
+                value="no-reward"
+                id="no-reward"
+              />
+            </div>
+
+            <div>
+              <label for="no-reward">Pledge with no reward</label>
+              <p>
+                Choose to support us without a reward if you simply believe in
+                our project. As a backer, you will be signed up to receive
+                product updates via email
+              </p>
+            </div>
           </div>
 
-          <div>
-            <label for="no-reward">Pledge with no reward</label>
-            <p>
-              Choose to support us without a reward if you simply believe in our
-              project. As a backer, you will be signed up to receive product
-              updates via email
-            </p>
+          <div class="payment">
+            <div class="line"></div>
+
+            <div class="pledges-container">
+              <p class="pledge-p">Enter your pledge</p>
+              <div>
+                <label for="pledge-amount" class="test"
+                  ><input type="text" id="dollar" value="$" disabled
+                /></label>
+                <input type="text" name="pledge-amount" class="pledge-input" />
+              </div>
+              <button class="button-smaller">Continue</button>
+            </div>
           </div>
         </div>
         <div class="card-reward card">
@@ -172,75 +189,130 @@
             <span class="bold">101</span> <span class="opacity">left</span>
           </p>
 
-          <div class="radio-container">
-            <input
-              type="radio"
-              name="pledge-options"
-              value="bamboo-stand"
-              id="bamboo-stand"
-            />
+          <div class="flex">
+            <div class="radio-container">
+              <input
+                type="radio"
+                name="pledge-options"
+                value="bamboo-stand"
+                id="bamboo-stand"
+                class="reward"
+              />
+            </div>
+
+            <div>
+              <label for="bamboo-stand"
+                >Bamboo Stand
+                <span class="always-cyan">Pledge 25$ or more</span></label
+              >
+              <p>
+                You get an ergonomic stand made of natural bamboo. You've helped
+                us launch our promotional campaign, and you’ll be added to a
+                special Backer member list.
+              </p>
+            </div>
           </div>
 
-          <div>
-            <label for="bamboo-stand"
-              >Bamboo Stand
-              <span class="always-cyan">Pledge 25$ or more</span></label
-            >
-            <p>
-              You get an ergonomic stand made of natural bamboo. You've helped
-              us launch our promotional campaign, and you’ll be added to a
-              special Backer member list.
+          <div class="payment">
+            <div class="line"></div>
+
+            <div class="pledges-container">
+              <p class="pledge-p">Enter your pledge</p>
+              <div>
+                <label for="pledge-amount" class="test"
+                  ><input type="text" id="dollar" value="$" disabled
+                /></label>
+                <input type="text" name="pledge-amount" class="pledge-input" />
+              </div>
+              <button class="button-smaller">Continue</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-reward card">
+          <div class="flex">
+            <p class="pledges-left">
+              <span class="bold">64</span> <span class="opacity">left</span>
             </p>
+            <div class="radio-container">
+              <input
+                type="radio"
+                name="pledge-options"
+                value="black-stand"
+                id="black-stand"
+                class="reward"
+              />
+            </div>
+
+            <div>
+              <label for="black-stand"
+                >Black Edition Stand
+                <span class="always-cyan">Pledge 75$ or more</span></label
+              >
+              <p>
+                You get a Black Special Edition computer stand and a personal
+                thank you. You’ll be added to our Backer member list. Shipping
+                is included.
+              </p>
+            </div>
+          </div>
+
+          <div class="payment">
+            <div class="line"></div>
+
+            <div class="pledges-container">
+              <p class="pledge-p">Enter your pledge</p>
+              <div>
+                <label for="pledge-amount" class="test"
+                  ><input type="text" id="dollar" value="$" disabled
+                /></label>
+                <input type="text" name="pledge-amount" class="pledge-input" />
+              </div>
+              <button class="button-smaller">Continue</button>
+            </div>
           </div>
         </div>
         <div class="card-reward card">
-          <p class="pledges-left">
-            <span class="bold">64</span> <span class="opacity">left</span>
-          </p>
-          <div class="radio-container">
-            <input
-              type="radio"
-              name="pledge-options"
-              value="black-stand"
-              id="black-stand"
-            />
+          <div class="flex">
+            <p class="pledges-left">
+              <span class="bold">0</span> <span class="opacity">left</span>
+            </p>
+            <div class="radio-container">
+              <input
+                type="radio"
+                name="pledge-options"
+                value="special-edition"
+                id="special-edition"
+                class="reward"
+              />
+            </div>
+
+            <div>
+              <label for="special-edition"
+                >Mahogany Special Edition
+                <span class="always-cyan">Pledge 200$ or more</span></label
+              >
+              <p>
+                You get two Special Edition Mahogany stands, a Backer T-Shirt,
+                and a personal thank you. You’ll be added to our Backer member
+                list. Shipping is included.
+              </p>
+            </div>
           </div>
 
-          <div>
-            <label for="black-stand"
-              >Black Edition Stand
-              <span class="always-cyan">Pledge 75$ or more</span></label
-            >
-            <p>
-              You get a Black Special Edition computer stand and a personal
-              thank you. You’ll be added to our Backer member list. Shipping is
-              included.
-            </p>
-          </div>
-        </div>
-        <div class="card-reward card">
-          <p class="pledges-left">
-            <span class="bold">0</span> <span class="opacity">left</span>
-          </p>
-          <div class="radio-container">
-            <input
-              type="radio"
-              name="pledge-options"
-              value="special-edition"
-              id="special-edition"
-            />
-          </div>
+          <div class="payment">
+            <div class="line"></div>
 
-          <div>
-            <label for="special-edition"
-              >Mahogany Special Edition
-              <span class="always-cyan">Pledge 200$ or more</span></label
-            >
-            <p>
-              You get two Special Edition Mahogany stands, a Backer T-Shirt, and
-              a personal thank you. You’ll be added to our Backer member list.
-              Shipping is included.
-            </p>
+            <div class="pledges-container">
+              <p class="pledge-p">Enter your pledge</p>
+              <div>
+                <label for="pledge-amount" class="test"
+                  ><input type="text" id="dollar" value="$" disabled
+                /></label>
+                <input type="text" name="pledge-amount" class="pledge-input" />
+              </div>
+              <button class="button-smaller">Continue</button>
+            </div>
           </div>
         </div>
       </form>

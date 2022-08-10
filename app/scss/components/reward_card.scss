@@ -34,8 +34,82 @@
   .card {
     @include card;
     padding: 30px 20px;
-    display: flex;
     position: relative;
+
+    .line {
+      margin-top: 20px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--light-gray);
+      position: relative;
+      left: -20px;
+      width: calc(100% + 40px);
+    }
+
+    .payment {
+      display: none;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .no-display {
+      display: none;
+    }
+
+    .button-smaller {
+      padding: 20px 35px;
+    }
+
+    .pledge-p {
+      padding-top: 20px;
+      padding-bottom: 0;
+      margin: 0;
+    }
+
+    .pledges-container {
+      display: flex;
+
+      :nth-child(2) {
+        margin-left: auto;
+        margin-right: 10px;
+      }
+    }
+
+    .pledge-input {
+      -webkit-appearance: none;
+      font-weight: var(--font-bold);
+      font-size: 1.2rem;
+      padding: 0;
+      padding-left: 10px;
+      padding-right: 5px;
+      height: 100%;
+      width: 80px;
+      border: 1px solid var(--moderate-cyan);
+      border-radius: 0px 50px 50px 0px;
+      border-left: 0px;
+    }
+
+    .pledge-input:focus {
+      border: 1px solid var(--moderate-cyan);
+      border-left: 0px;
+      outline: none;
+    }
+
+    input[type="text"]#dollar {
+      height: 100%;
+      -webkit-appearance: none !important;
+      font-size: 1.2rem;
+      color: gray;
+      padding-right: 10px;
+      text-align: right;
+      width: 50px;
+      border: 1px solid var(--moderate-cyan);
+      border-radius: 50px 0px 0px 50px;
+      border-right: 0px;
+      margin: 0 -7px 0 0;
+      background: white;
+    }
 
     .radio-container {
       margin-right: 20px;
@@ -84,9 +158,12 @@
       border-color: var(--moderate-cyan);
     }
 
-    .radio-button-clicked,
     .radio-button-hovered {
       color: var(--moderate-cyan);
+    }
+
+    .radio-button-clicked {
+      color: var(--black);
     }
 
     .always-cyan {

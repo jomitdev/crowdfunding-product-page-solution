@@ -1,9 +1,19 @@
 const bookmarkEl = document.querySelector(".bookmark");
 const radioEl = document.querySelectorAll('[type="radio"]');
 const labelEl = document.querySelectorAll("label");
-const indexes_of_buttons_not_clicked = [];
+const indexesOfButtonsNotClicked = [];
+
+const dollarEl = document.querySelector(".test");
+const pledgeEl = document.querySelector(".pledge-input");
+
+const paymentEl = document.querySelectorAll(".payment");
+
 let clicked = [false, false, false, false];
 let bookmarked = false;
+
+dollarEl.addEventListener("click", function () {
+  pledgeEl.focus();
+});
 
 for (let i = 0; i < radioEl.length; i++) {
   radioEl[i].addEventListener("mouseover", function () {
@@ -19,15 +29,17 @@ for (let i = 0; i < radioEl.length; i++) {
     // finds the index of the buttons that aren't clicked
     for (let index = 0; index < clicked.length; index++) {
       if (clicked[index] === false) {
-        indexes_of_buttons_not_clicked.push(index);
+        indexesOfButtonsNotClicked.push(index);
       }
     }
     // removes the cyan color from the labels that haven't been clicked
     for (let j = 0; j < clicked.length; j++) {
       labelEl[j].classList.remove("radio-button-clicked");
+      paymentEl[j].classList.add("payment");
     }
     // adds the cyan color to the label that has been clicked
     labelEl[i].classList.add("radio-button-clicked");
+    paymentEl[i].classList.remove("payment");
   });
 }
 
