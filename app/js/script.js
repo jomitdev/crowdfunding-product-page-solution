@@ -1,6 +1,6 @@
 const bookmarkEl = document.querySelector(".bookmark");
 const radioEl = document.querySelectorAll('[type="radio"]');
-const labelEl = document.querySelectorAll("label");
+const labelEl = document.querySelectorAll(".reward-label");
 const card = document.querySelectorAll("form > div");
 const indexesOfButtonsNotClicked = [];
 
@@ -71,6 +71,8 @@ for (let i = 0; i < selectReward.length; i++) {
   selectReward[i].addEventListener("click", function () {
     for (let j = 0; j < clicked.length; j++) {
       card[j].classList.remove("card-selected");
+      paymentEl[j].classList.add("payment");
+      radioEl[j].checked = false;
     }
 
     const otherHeight = amountscrolled() + 1500;
@@ -78,6 +80,8 @@ for (let i = 0; i < selectReward.length; i++) {
     popupCard.classList.remove("close");
     transparentBg.classList.remove("close");
     card[i + 1].classList.add("card-selected");
+    paymentEl[i + 1].classList.remove("payment");
+    radioEl[i + 1].checked = true;
   });
 }
 
