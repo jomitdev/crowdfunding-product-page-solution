@@ -1,11 +1,14 @@
 @use "../util" as *;
 
+.close {
+  display: none;
+}
+
 .back-project-popup {
   @include card;
   max-width: 925px;
   position: absolute;
   z-index: 10;
-  top: 250px;
   right: 0;
   left: 0;
   margin-inline: auto;
@@ -29,6 +32,10 @@
   h3 {
     font-size: 1.5rem;
     font-weight: var(--font-bold);
+  }
+
+  .card-selected {
+    border: 2px solid var(--moderate-cyan) !important;
   }
 
   .card {
