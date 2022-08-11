@@ -64,16 +64,16 @@
       }
     }
   }
+}
 
-  .last {
-    opacity: 50%;
+.gray {
+  opacity: 50%;
+}
 
-    .button-gray {
-      background-color: var(--dark-gray);
-      padding-inline: 40px;
-      font-weight: var(--font-bold);
-      font-size: 1rem;
-      color: white;
-    }
-  }
+.button-gray {
+  background-color: var(--dark-gray);
+  padding-inline: 40px;
+  font-weight: var(--font-bold);
+  font-size: 1rem;
+  color: white;
 }

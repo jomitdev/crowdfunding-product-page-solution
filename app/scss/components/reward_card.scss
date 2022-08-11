@@ -125,11 +125,15 @@
     label {
       font-size: 1.1rem;
       font-weight: var(--font-bold);
-      cursor: pointer;
+      cursor: default;
       transition: color 100ms ease-in-out;
     }
 
-    label:hover {
+    .reward-label {
+      cursor: pointer;
+    }
+
+    .reward-label:hover {
       color: var(--moderate-cyan);
     }
 
@@ -140,7 +144,7 @@
       border-radius: 50%;
       outline: none;
       border: 1px solid gray;
-      cursor: pointer;
+
       transition: border 100ms ease-in-out;
     }
 
@@ -153,16 +157,17 @@
       border-radius: 50%;
     }
 
-    input[type="radio"]:checked:before {
+    .radio:checked:before {
       background: var(--moderate-cyan);
     }
 
-    input[type="radio"]:checked {
+    .radio:checked {
       border-color: var(--moderate-cyan);
     }
 
-    input[type="radio"]:hover {
+    .radio:hover {
       border-color: var(--moderate-cyan);
+      cursor: pointer;
     }
 
     .radio-button-hovered {
