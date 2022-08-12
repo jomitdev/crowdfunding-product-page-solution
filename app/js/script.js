@@ -27,6 +27,9 @@ const mahoganysLeftEl = document.querySelectorAll(".mahogany");
 
 const barEl = document.querySelector(".inner-bar");
 
+const modalCompletedEl = document.querySelector(".modal-completed");
+const closeModalEl = document.querySelector(".close-modal");
+
 let valid = false;
 
 const aboutCard = document.querySelectorAll(".about > .card");
@@ -39,7 +42,7 @@ let totalBackers = 5007;
 let totalBackersWithCommas = 0;
 let bambooStandsLeft = 101;
 let blackStandsLeft = 64;
-let mahoganysLeft = 2;
+let mahoganysLeft = 0;
 
 let selectRewardArray = [bambooStandsLeft, blackStandsLeft, mahoganysLeft];
 let selectRewardArrayForPopup = [
@@ -71,6 +74,11 @@ for (let i = 0; i < selectRewardArray.length; i++) {
   }
 }
 
+closeModalEl.addEventListener("click", function () {
+  modalCompletedEl.classList.toggle("close");
+  transparentBg.classList.toggle("close");
+});
+
 function checkInput(amountGiven, minAmount) {
   const amount = amountGiven.value;
   if (amount <= 0) {
@@ -81,9 +89,6 @@ function checkInput(amountGiven, minAmount) {
     );
   } else if (amount >= minAmount) {
     valid = true;
-    alert(
-      "Payment succesful. Thank you for the help! You will be added to the backers list"
-    );
     moneyBacked = Number(moneyBacked);
     moneyBacked += Number(amount);
     calcBar(moneyBacked);
@@ -97,6 +102,12 @@ function checkInput(amountGiven, minAmount) {
     ).toString();
     moneyBackedEl.innerText = `$${moneyBackedWithCommas}`;
     totalBackersEl.innerText = totalBackersWithCommas;
+
+    let modalHeight = amountscrolled() + 1230;
+    modalCompletedEl.style.top = `${modalHeight}px`;
+
+    modalCompletedEl.classList.toggle("close");
+    popupCard.classList.toggle("close");
   }
 }
 

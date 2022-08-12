@@ -1,0 +1,25 @@
+@use "../util" as *;
+
+.modal-completed {
+  @include card;
+  max-width: 600px;
+  height: 500px;
+  position: relative;
+  margin-inline: auto;
+  z-index: 20;
+  text-align: center;
+
+  img {
+    margin-bottom: 30px;
+    width: 80px;
+    height: 80px;
+  }
+
+  h2 {
+    margin-block: 20px;
+  }
+
+  p {
+    margin-bottom: 40px;
+  }
+}
