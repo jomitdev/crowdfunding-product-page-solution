@@ -28,7 +28,12 @@
     <nav>
       <div class="nav__container">
         <a href=""><img src="images/logo.svg" alt="Logo" /></a>
-        <ul class="options__container">
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="options-container">
           <li><a href="#" class="nav__item">About</a></li>
           <li><a href="#" class="nav__item">Discover</a></li>
           <li><a href="#" class="nav__item">Get Started</a></li>
@@ -46,6 +51,9 @@
           <button class="button">Back this project</button>
           <button class="bookmark">
             <img src="images/icon-bookmark.svg" alt="" /> Bookmark
+          </button>
+          <button class="bookmark-mobile">
+            <img src="images/icon-bookmark.svg" alt="Bookmark" />
           </button>
         </div>
       </section>
@@ -147,9 +155,12 @@
     </main>
 
     <div class="back-project-popup close">
-      <div class="close-popup"></div>
+      <div class="close-popup desktop"></div>
       <form action="">
-        <h3>Back this project</h3>
+        <div class="main-headline-flex">
+          <h3>Back this project</h3>
+          <div class="close-popup mobile"></div>
+        </div>
         <p>
           Want to support us into bringing Mastercraft Bamboo Monitor Riser out
           in the world?
@@ -167,10 +178,10 @@
             </div>
 
             <div>
-              <label for="no-reward" class="reward-label"
+              <label for="no-reward" class="reward-label label-wrap"
                 >Pledge with no reward</label
               >
-              <p>
+              <p class="description">
                 Choose to support us without a reward if you simply believe in
                 our project. As a backer, you will be signed up to receive
                 product updates via email
@@ -178,8 +189,16 @@
             </div>
           </div>
 
+          <p class="description-mobile">
+            Choose to support us without a reward if you simply believe in our
+            project. As a backer, you will be signed up to receive product
+            updates via email
+          </p>
+
           <div class="payment">
             <div class="line"></div>
+
+            <p class="pledge-p-mobile">Enter your pledge</p>
 
             <div class="pledges-container">
               <p class="pledge-p">Enter your pledge</p>
@@ -194,11 +213,6 @@
           </div>
         </div>
         <div class="card-reward card">
-          <p class="pledges-left">
-            <span class="bold bamboo">101</span>
-            <span class="opacity">left</span>
-          </p>
-
           <div class="flex">
             <div class="radio-container">
               <input
@@ -211,11 +225,11 @@
             </div>
 
             <div>
-              <label for="bamboo-stand" class="reward-label"
+              <label for="bamboo-stand" class="reward-label label-wrap"
                 >Bamboo Stand
                 <span class="always-cyan">Pledge 25$ or more</span></label
               >
-              <p>
+              <p class="description">
                 You get an ergonomic stand made of natural bamboo. You've helped
                 us launch our promotional campaign, and you’ll be added to a
                 special Backer member list.
@@ -223,8 +237,21 @@
             </div>
           </div>
 
+          <p class="description-mobile">
+            You get an ergonomic stand made of natural bamboo. You've helped us
+            launch our promotional campaign, and you’ll be added to a special
+            Backer member list.
+          </p>
+
+          <p class="pledges-left">
+            <span class="bold bamboo">101</span>
+            <span class="opacity">left</span>
+          </p>
+
           <div class="payment">
             <div class="line"></div>
+
+            <p class="pledge-p-mobile">Enter your pledge</p>
 
             <div class="pledges-container">
               <p class="pledge-p">Enter your pledge</p>
@@ -241,10 +268,6 @@
 
         <div class="card-reward card">
           <div class="flex">
-            <p class="pledges-left">
-              <span class="bold black">64</span>
-              <span class="opacity">left</span>
-            </p>
             <div class="radio-container">
               <input
                 type="radio"
@@ -256,11 +279,11 @@
             </div>
 
             <div>
-              <label for="black-stand" class="reward-label"
+              <label for="black-stand" class="reward-label label-wrap"
                 >Black Edition Stand
                 <span class="always-cyan">Pledge 75$ or more</span></label
               >
-              <p>
+              <p class="description">
                 You get a Black Special Edition computer stand and a personal
                 thank you. You’ll be added to our Backer member list. Shipping
                 is included.
@@ -268,8 +291,21 @@
             </div>
           </div>
 
+          <p class="description-mobile">
+            You get a Black Special Edition computer stand and a personal thank
+            you. You’ll be added to our Backer member list. Shipping is
+            included.
+          </p>
+
+          <p class="pledges-left">
+            <span class="bold black">64</span>
+            <span class="opacity">left</span>
+          </p>
+
           <div class="payment">
             <div class="line"></div>
+
+            <p class="pledge-p-mobile">Enter your pledge</p>
 
             <div class="pledges-container">
               <p class="pledge-p">Enter your pledge</p>
@@ -285,10 +321,6 @@
         </div>
         <div class="card-reward card">
           <div class="flex">
-            <p class="pledges-left">
-              <span class="bold mahogany">0</span>
-              <span class="opacity">left</span>
-            </p>
             <div class="radio-container">
               <input
                 type="radio"
@@ -300,11 +332,11 @@
             </div>
 
             <div>
-              <label for="special-edition" class="reward-label"
+              <label for="special-edition" class="reward-label label-wrap"
                 >Mahogany Special Edition
                 <span class="always-cyan">Pledge 200$ or more</span></label
               >
-              <p>
+              <p class="description">
                 You get two Special Edition Mahogany stands, a Backer T-Shirt,
                 and a personal thank you. You’ll be added to our Backer member
                 list. Shipping is included.
@@ -312,8 +344,21 @@
             </div>
           </div>
 
+          <p class="description-mobile">
+            You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
+            personal thank you. You’ll be added to our Backer member list.
+            Shipping is included.
+          </p>
+
+          <p class="pledges-left">
+            <span class="bold mahogany">0</span>
+            <span class="opacity">left</span>
+          </p>
+
           <div class="payment">
             <div class="line"></div>
+
+            <p class="pledge-p-mobile">Enter your pledge</p>
 
             <div class="pledges-container">
               <p class="pledge-p">Enter your pledge</p>

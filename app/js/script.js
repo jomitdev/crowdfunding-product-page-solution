@@ -1,10 +1,9 @@
-// Bugs: when nothing left does not get gray,
-// Add payment reward
-
 const bookmarkEl = document.querySelector(".bookmark");
+const bookmarkMobileEl = document.querySelector(".bookmark-mobile");
+
 const radioEl = document.querySelectorAll('[type="radio"]');
 const labelEl = document.querySelectorAll(".reward-label");
-const card = document.querySelectorAll("form > div");
+const card = document.querySelectorAll("form > .card");
 const indexesOfButtonsNotClicked = [];
 
 const dollarEl = document.querySelectorAll(".test");
@@ -14,7 +13,7 @@ const paymentEl = document.querySelectorAll(".payment");
 
 const popupCard = document.querySelector(".back-project-popup");
 const transparentBg = document.querySelector(".transparent-background");
-const closePopup = document.querySelector(".close-popup");
+const closePopup = document.querySelectorAll(".close-popup");
 const openPopup = document.querySelector(".button");
 const selectReward = document.querySelectorAll(".open-popup-with-option");
 
@@ -30,7 +29,11 @@ const barEl = document.querySelector(".inner-bar");
 const modalCompletedEl = document.querySelector(".modal-completed");
 const closeModalEl = document.querySelector(".close-modal");
 
+const mobileMenuEl = document.querySelector(".options-container");
+const mobileMenuButton = document.querySelector(".hamburger");
+
 let valid = false;
+let opened = false;
 
 const aboutCard = document.querySelectorAll(".about > .card");
 
@@ -74,6 +77,28 @@ for (let i = 0; i < selectRewardArray.length; i++) {
   }
 }
 
+mobileMenuButton.addEventListener("click", () => {
+  if (opened === false) {
+    mobileMenuButton.classList.toggle("active");
+    mobileMenuEl.classList.toggle("active");
+    transparentBg.classList.toggle("close");
+    document.querySelector("body").style.height = "100%";
+    document.querySelector("body").style.overflow = "hidden";
+    document.querySelector("html").style.height = "100%";
+    document.querySelector("html").style.overflow = "hidden";
+    opened = true;
+  } else {
+    mobileMenuButton.classList.toggle("active");
+    mobileMenuEl.classList.toggle("active");
+    transparentBg.classList.toggle("close");
+    document.querySelector("body").style.height = "";
+    document.querySelector("body").style.overflow = "";
+    document.querySelector("html").style.height = "";
+    document.querySelector("html").style.overflow = "";
+    opened = false;
+  }
+});
+
 closeModalEl.addEventListener("click", function () {
   modalCompletedEl.classList.toggle("close");
   transparentBg.classList.toggle("close");
@@ -93,7 +118,6 @@ function checkInput(amountGiven, minAmount) {
     moneyBacked += Number(amount);
     calcBar(moneyBacked);
     moneyBackedWithCommas = moneyBacked;
-    console.log(moneyBackedWithCommas);
     moneyBackedWithCommas = numberWithCommas(moneyBackedWithCommas).toString();
     totalBackers += 1;
     totalBackersWithCommas = totalBackers;
@@ -103,7 +127,7 @@ function checkInput(amountGiven, minAmount) {
     moneyBackedEl.innerText = `$${moneyBackedWithCommas}`;
     totalBackersEl.innerText = totalBackersWithCommas;
 
-    let modalHeight = amountscrolled() + 1230;
+    let modalHeight = amountscrolled() + 300;
     modalCompletedEl.style.top = `${modalHeight}px`;
 
     modalCompletedEl.classList.toggle("close");
@@ -124,25 +148,13 @@ function getDocHeight() {
 }
 
 function amountscrolled() {
-  let winheight =
-    window.innerHeight ||
-    (document.documentElement || document.body).clientHeight;
-  let docheight = getDocHeight();
   let scrollTop =
     window.pageYOffset ||
     (document.documentElement || document.body.parentNode || document.body)
       .scrollTop;
-  let trackLength = docheight - winheight;
-  return scrollTop - trackLength;
-}
 
-window.addEventListener(
-  "scroll",
-  function () {
-    amountscrolled();
-  },
-  false
-);
+  return scrollTop;
+}
 
 submitPledges[0].addEventListener("click", function () {
   checkInput(pledgeEl[0], 0.1);
@@ -214,13 +226,16 @@ for (let i = 0; i < dollarEl.length; i++) {
   });
 }
 
-closePopup.addEventListener("click", function () {
-  popupCard.classList.add("close");
-  transparentBg.classList.add("close");
-});
+for (let i = 0; i < closePopup.length; i++) {
+  closePopup[i].addEventListener("click", function () {
+    popupCard.classList.add("close");
+    transparentBg.classList.add("close");
+  });
+}
 
 openPopup.addEventListener("click", function () {
-  const newHeigt = amountscrolled() + 1830;
+  const newHeigt = amountscrolled() + 250;
+  console.log(newHeigt);
   popupCard.style.top = `${newHeigt}px`;
   popupCard.classList.remove("close");
   transparentBg.classList.remove("close");
@@ -246,7 +261,7 @@ for (let i = 0; i < selectReward.length; i++) {
         radioEl[j].checked = false;
       }
 
-      const otherHeight = amountscrolled() + 1500;
+      const otherHeight = amountscrolled() + 250;
       popupCard.style.top = `${otherHeight}px`;
       popupCard.classList.remove("close");
       transparentBg.classList.remove("close");
@@ -320,6 +335,22 @@ for (let i = 0; i < radioEl.length; i++) {
   });
 }
 
+window.addEventListener("resize", () => {
+  if (bookmarked === true) {
+    bookmarkEl.classList.add("bookmarked");
+    bookmarkEl.innerHTML = `<img src="images/icon-bookmarked.svg" alt="" />
+   Bookmarked`;
+    bookmarkMobileEl.classList.add("bookmarked");
+    bookmarkMobileEl.innerHTML = `<img src="images/icon-bookmarked.svg" alt="Bookmarked" />`;
+  } else {
+    bookmarkEl.classList.remove("bookmarked");
+    bookmarkEl.innerHTML = `<img src="images/icon-bookmark.svg" alt="" />
+   Bookmark`;
+    bookmarkMobileEl.classList.remove("bookmarked");
+    bookmarkMobileEl.innerHTML = `<img src="images/icon-bookmark.svg" alt="Bookmark" />`;
+  }
+});
+
 bookmarkEl.addEventListener("click", function () {
   if (bookmarked === false) {
     bookmarked = true;
@@ -331,6 +362,19 @@ bookmarkEl.addEventListener("click", function () {
     bookmarkEl.classList.remove("bookmarked");
     bookmarkEl.innerHTML = `<img src="images/icon-bookmark.svg" alt="" />
    Bookmark`;
+    bookmarked = false;
+  }
+});
+
+bookmarkMobileEl.addEventListener("click", () => {
+  if (bookmarked === false) {
+    bookmarked = true;
+    bookmarkMobileEl.classList.add("bookmarked");
+    bookmarkMobileEl.innerHTML = `<img src="images/icon-bookmarked.svg" alt="Bookmarked" />`;
+    bookmarkme();
+  } else {
+    bookmarkMobileEl.classList.remove("bookmarked");
+    bookmarkMobileEl.innerHTML = `<img src="images/icon-bookmark.svg" alt="Bookmark" />`;
     bookmarked = false;
   }
 });

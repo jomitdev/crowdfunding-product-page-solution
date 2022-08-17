@@ -31,3 +31,18 @@ button {
 .button-smaller:hover {
   background: var(--dark-cyan);
 }
+
+section {
+  margin-inline: 50px;
+}
+
+@media (max-width: 550px) {
+  section {
+    margin-inline: 20px;
+  }
+
+  .back-project-popup {
+    right: 20px !important;
+    left: 20px !important;
+  }
+}

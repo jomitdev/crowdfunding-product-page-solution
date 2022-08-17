@@ -30,4 +30,12 @@ $breakpoints-down: (
   border-radius: 10px;
   background: white;
   padding: 50px 60px;
+
+  @media (max-width: 650px) {
+    padding: 40px 30px;
+  }
+
+  @media (max-width: 470px) {
+    padding: 30px 30px;
+  }
 }
